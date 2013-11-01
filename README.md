@@ -1,4 +1,5 @@
 TheOthers
 =========
 
-C# library to monitor the "The Others". A "other" can be another systems, api,s web services, databases or any other external dependency that your application is dependent.
+C# library to monitor the "The Others". A "other" can be anything that your current application is depentent, like 
+others systems, web apis, web services and databases.
