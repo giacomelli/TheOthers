@@ -2,7 +2,7 @@ TheOthers
 ===============
 [![Build Status](https://travis-ci.org/giacomelli/TheOthers.png?branch=master)](https://travis-ci.org/giacomelli/TheOthers)
 
-C# library to monitor all external depenencies of your app. An external dependency or "The Other", can be anything that your current app is depentent, like 
+C# library to monitor all external dependencies of your app. An external dependency or "The Other", can be anything that your current app is depentent, like 
 others systems, web apis, web services and databases.
 
 --------
