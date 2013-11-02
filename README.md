@@ -9,7 +9,7 @@ others systems, web apis, web services and databases.
 
 Features
 ===
- - Add your onw external dependency checker implementing IExternalDependency or extending ExternalDependencyBase.
+ - Add your own external dependency checker implementing IExternalDependency or extending ExternalDependencyBase.
  - Base classes for database (DbExternalDependencyBase) and web (WebExternalDependencyBase) external dependencies.
  - Easy find all your dependencies through the ExternalDependencyService domain service.
  - Renderize a monitor on your ASP .NET MVC project using basic html or Bootstrap style with just one line of code.
@@ -23,7 +23,7 @@ Setup
 
 PM> Install-Package TheOthers.Mvc
 
-`Any other .NET projects`
+`For any other .NET projects`
 
 PM> Install-Package TheOthers
 
