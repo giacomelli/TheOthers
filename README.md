@@ -89,7 +89,6 @@ Discovering all external dependencies
 
 var theOthers = ExternalDependencyService.GetAllExternalDepencies ();
 
-
 ```
 
 Checking all external dependencies status at once
@@ -97,8 +96,6 @@ Checking all external dependencies status at once
 ```csharp
 
 var theOthersStatus = ExternalDependencyService.CheckAllExternalDependenciesStatus ();
-
-
 ```
 
 Rendering a TheOthers monitor on your MVC project
@@ -110,7 +107,7 @@ Rendering a TheOthers monitor on your MVC project
 
 // or
 
-@Html.TheOthers().BasicHtmlTable()
+@Html.TheOthers().BasicTableMonitor()
 
 
 ```
@@ -119,7 +116,7 @@ Rendering a TheOthers monitor on your MVC project
 
 Roadmap
 -------- 
- - Implements others external dependencies base class
+ - Implement others external dependencies base classes:
  	- WmiExternalDependencyBase
  	- WcfExternalDependencyBase
  	- RestExternalDependencyBase
@@ -130,7 +127,7 @@ Roadmap
 How to improve it?
 ======
 
-Create a fork of [SalesforceSharp](https://github.com/giacomelli/TheOthers/fork). 
+Create a fork of [TheOthers](https://github.com/giacomelli/TheOthers/fork). 
 
 Did you change it? [Submit a pull request](https://github.com/giacomelli/TheOthers/pull/new/master).
 
