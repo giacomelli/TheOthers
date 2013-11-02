@@ -5,9 +5,9 @@ using System.Web;
 
 namespace TheOthers.MvcSample.App_Start.Others
 {
-    public class StatisticsDbOther : DbOtherBase
+    public class StatisticsDbExternalDependency : DbExternalDependencyBase
     {
-        public StatisticsDbOther()
+        public StatisticsDbExternalDependency()
             : base("Statistis Database", "StatisticsDb")
         {
         }

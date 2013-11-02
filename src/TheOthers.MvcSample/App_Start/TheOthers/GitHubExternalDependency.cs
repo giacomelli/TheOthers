@@ -4,11 +4,11 @@ using System.Linq;
 using System.Net;
 using System.Web;
 
-namespace TheOthers.MvcSample.App_Start.Others
+namespace TheOthers.MvcSample.App_Start.TheOthers
 {
-    public class GitHubOther : WebOtherBase
+    public class GitHubExternalDependency : WebExternalDependencyBase
     {
-        public GitHubOther()
+        public GitHubExternalDependency()
             : base("GitHub", "http://www.github.com", HttpStatusCode.OK)
         {
         }

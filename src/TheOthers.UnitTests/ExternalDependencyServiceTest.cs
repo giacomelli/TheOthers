@@ -4,20 +4,20 @@ using System;
 namespace TheOthers.UnitTests
 {
 	[TestFixture()]
-	public class OtherServiceTest
+	public class ExternalDependencyServiceTest
 	{
 		[Test()]
-		public void GetAllOthers_NoArgs_AllOthers ()
+		public void GetAllExternalDepencies_NoArgs_AllOthers ()
 		{
-			var actual = OtherService.GetAllOthers ();
+			var actual = ExternalDependencyService.GetAllExternalDepencies ();
 			Assert.AreEqual (1, actual.Count);
 			Assert.AreEqual ("Stub 1", actual [0].Name);
 		}
 
 		[Test()]
-		public void CheckAllOthersStatus_NoArgs_AllOthersWithUpdatedStatus ()
+		public void CheckAllExternalDependenciesStatus_NoArgs_AllOthersWithUpdatedStatus ()
 		{
-			var actual = OtherService.CheckAllOthersStatus ();
+			var actual = ExternalDependencyService.CheckAllExternalDependenciesStatus ();
 			Assert.AreEqual (1, actual.Count);
 			Assert.AreEqual ("Stub 1", actual [0].Name);
 			Assert.IsNotNull (actual [0].Status);

@@ -1,0 +1,9 @@
+language: c
+ 
+install:
+  - sudo apt-get install mono-devel mono-gmcs nunit-console
+  - mozroots --import --sync
+ 
+script:
+  - xbuild ./src/TheOthers.sln
+  - nunit-console ./src/TheOthers.UnitTests/bin/Debug/TheOthers.UnitTests.dll

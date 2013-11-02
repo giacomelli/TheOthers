@@ -6,20 +6,20 @@ using TestSharp;
 namespace TheOthers.UnitTests
 {
 	[TestFixture]
-	public class OtherBaseTest
+	public class ExternalDependencyBaseTest
 	{
 		[Test]
 		public void Constructor_NullOrEmptyName_Exception ()
 		{	
 			ExceptionAssert.IsThrowing (typeof(Exception), () => {
-				MockRepository.GenerateMock<OtherBase> ("");
+				MockRepository.GenerateMock<ExternalDependencyBase> ("");
 			});
 		}
 
 		[Test]
 		public void Constructor_Name_PropertySetted ()
 		{
-			var target = MockRepository.GenerateMock<OtherBase> ("test name");
+			var target = MockRepository.GenerateMock<ExternalDependencyBase> ("test name");
 			Assert.AreEqual ("test name", target.Name);
 			Assert.IsNull (target.Status);
 		}
@@ -27,8 +27,8 @@ namespace TheOthers.UnitTests
 		[Test]
 		public void CheckStatus_IsNotFailing_IsFailingFalse ()
 		{
-			var target = MockRepository.GenerateMock<OtherBase> ("test name");
-			target.Expect (t => t.PerformCheckStatus ()).Return (new OtherStatus () { IsFailing = false });
+			var target = MockRepository.GenerateMock<ExternalDependencyBase> ("test name");
+			target.Expect (t => t.PerformCheckStatus ()).Return (new ExternalDependencyStatus () { IsFailing = false });
 
 			target.CheckStatus ();
 
@@ -43,8 +43,8 @@ namespace TheOthers.UnitTests
 		[Test]
 		public void CheckStatus_IsFailing_IsFailingTrue ()
 		{
-			var target = MockRepository.GenerateMock<OtherBase> ("test name");
-			target.Expect (t => t.PerformCheckStatus ()).Return (new OtherStatus () { IsFailing = true, Description = "failing" });
+			var target = MockRepository.GenerateMock<ExternalDependencyBase> ("test name");
+			target.Expect (t => t.PerformCheckStatus ()).Return (new ExternalDependencyStatus () { IsFailing = true, Description = "failing" });
 
 			target.CheckStatus ();
 
@@ -59,7 +59,7 @@ namespace TheOthers.UnitTests
 		[Test]
 		public void CheckStatus_Exception_IsFailingTrue ()
 		{
-			var target = MockRepository.GenerateMock<OtherBase> ("test name");
+			var target = MockRepository.GenerateMock<ExternalDependencyBase> ("test name");
 			target.Expect (t => t.PerformCheckStatus ()).Throw (new Exception ("exception occurred"));
 
 			target.CheckStatus ();
