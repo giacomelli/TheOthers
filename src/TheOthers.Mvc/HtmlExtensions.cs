@@ -61,8 +61,6 @@ namespace TheOthers.Mvc
 
             foreach (var other in others)
             {
-                var panelClass = other.Status.IsFailing ? "danger" : "success";
-
                 ui.Html.AppendFormat(
                 @" 
                 <tr>
