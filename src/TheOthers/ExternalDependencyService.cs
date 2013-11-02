@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using HelperSharp;
+using System.IO;
 
 namespace TheOthers
 {
@@ -24,8 +25,7 @@ namespace TheOthers
             if (s_othersCache == null)
             {
                 var result = new List<IExternalDependency>();
-                var interfaceType = typeof(IExternalDependency);
-
+      
                 var canditateAssemblies = AppDomain.CurrentDomain.GetAssemblies();
                 var types = new List<Type>();
 
@@ -41,7 +41,7 @@ namespace TheOthers
                     }
                 }
 
-                var externalInterfaceTypes = types.Where(t => interfaceType.IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract);
+				var externalInterfaceTypes = types.Where(t => FilterExternalDependency(t));
 
                 foreach (var type in externalInterfaceTypes)
                 {
@@ -79,5 +79,18 @@ namespace TheOthers
 
             return s_othersCache;
         }
+
+		private static bool FilterExternalDependency(Type type)
+		{
+			var interfaceType = typeof(IExternalDependency);
+
+			try {
+				return interfaceType.IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract;
+			}
+			catch(Exception)
+			{
+				return false;
+			}
+		}
     }
 }

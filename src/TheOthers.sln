@@ -1,3 +1,4 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOthers", "TheOthers\TheOthers.csproj", "{3FC5A72A-C453-4622-B487-5192E23938B6}"
@@ -13,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{08B1C9
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOthers.MvcSample", "TheOthers.MvcSample\TheOthers.MvcSample.csproj", "{78E0C519-F733-4E48-B368-C16B718741F8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOthers.MvcSample", "TheOthers.MvcSample\TheOthers.MvcSample.csproj", "{8D643429-DD20-4055-BEEE-C3F68ECA4FBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,19 +30,21 @@ Global
 		{8B721697-C394-4831-9E17-63E792BCB3D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B721697-C394-4831-9E17-63E792BCB3D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B721697-C394-4831-9E17-63E792BCB3D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D643429-DD20-4055-BEEE-C3F68ECA4FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D643429-DD20-4055-BEEE-C3F68ECA4FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D643429-DD20-4055-BEEE-C3F68ECA4FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D643429-DD20-4055-BEEE-C3F68ECA4FBD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA89DFC7-8C5A-4B0F-A0D2-DCB35C17D83E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA89DFC7-8C5A-4B0F-A0D2-DCB35C17D83E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA89DFC7-8C5A-4B0F-A0D2-DCB35C17D83E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA89DFC7-8C5A-4B0F-A0D2-DCB35C17D83E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{78E0C519-F733-4E48-B368-C16B718741F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{78E0C519-F733-4E48-B368-C16B718741F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{78E0C519-F733-4E48-B368-C16B718741F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{78E0C519-F733-4E48-B368-C16B718741F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = TheOthers.MvcSample\TheOthers.MvcSample.csproj
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
