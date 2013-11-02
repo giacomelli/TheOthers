@@ -54,12 +54,12 @@ public class LegacySystemExternalDependecy : ExternalDependencyBase
 		}
 	}
 }
-
 ```
 
 Creating your external dependency for database
 ---
 ```csharp
+
 public class StatisticsDbExternalDependency : DbExternalDependencyBase
 {
     public StatisticsDbExternalDependency()
@@ -67,7 +67,6 @@ public class StatisticsDbExternalDependency : DbExternalDependencyBase
     {
     }
 }
-
 ```
 
 Creating your external dependency for web
@@ -80,7 +79,6 @@ public class GitHubExternalDependency : WebExternalDependencyBase
     {
     }
 }
-
 ```
 
 Discovering all external dependencies
@@ -88,7 +86,6 @@ Discovering all external dependencies
 ```csharp
 
 var theOthers = ExternalDependencyService.GetAllExternalDepencies ();
-
 ```
 
 Checking all external dependencies status at once
@@ -108,8 +105,6 @@ Rendering a TheOthers monitor on your MVC project
 // or
 
 @Html.TheOthers().BasicTableMonitor()
-
-
 ```
 
 --------
