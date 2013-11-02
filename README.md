@@ -9,11 +9,11 @@ others systems, web apis, web services and databases.
 
 Features
 ===
- - Add your own external dependency checker implementing [IExternalDependency](src/TheOthers/IExternalDependency) or extending [ExternalDependencyBase](src/TheOthers/ExternalDependencyBase).
+ - Add your own external dependency checker implementing [IExternalDependency](src/TheOthers/IExternalDependency.cs) or extending [ExternalDependencyBase](src/TheOthers/ExternalDependencyBase.cs).
  - Base classes for common external dependencies, as:
- 	- Database ([DbExternalDependencyBase](src/TheOthers/DbExternalDependencyBase)).
- 	- Web ([WebExternalDependencyBase](src/TheOthers/WebExternalDependencyBase)). 
- - Easy find all your dependencies through the [ExternalDependencyService](src/TheOthers/ExternalDependencyService) domain service.
+ 	- Database ([DbExternalDependencyBase](src/TheOthers/DbExternalDependencyBase.cs)).
+ 	- Web ([WebExternalDependencyBase](src/TheOthers/WebExternalDependencyBase.cs)). 
+ - Easy find all your dependencies through the [ExternalDependencyService](src/TheOthers/ExternalDependencyService.cs) domain service.
  - Renderize a monitor on your ASP .NET MVC project using basic html or Bootstrap style with just one line of code.
  
 ![](docs/screenshots/BootstrapMonitor.png)
