@@ -80,6 +80,7 @@ namespace TheOthers
             return s_othersCache;
         }
 
+        // TODO: use HelperSharp.ReflectionHelper.GetSubclassof (waiting for nuget package update).
 		private static bool FilterExternalDependency(Type type)
 		{
 			var interfaceType = typeof(IExternalDependency);
