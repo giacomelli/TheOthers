@@ -2,8 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using HelperSharp;
-using System.IO;
 
 namespace TheOthers
 {
@@ -12,15 +10,13 @@ namespace TheOthers
     /// </summary>
     public static class ExternalDependencyService
     {
-        #region Fields
         private static IList<IExternalDependency> s_othersCache;
-        #endregion
 
         /// <summary>
         /// Gets all external dependencies.
         /// </summary>
         /// <returns>The all others.</returns>
-        public static IList<IExternalDependency> GetAllExternalDepencies()
+        public static IList<IExternalDependency> GetAll()
         {
             if (s_othersCache == null)
             {
@@ -56,7 +52,7 @@ namespace TheOthers
                     }
                     catch (TargetInvocationException ex)
                     {
-                        throw new InvalidOperationException("An error occurred while trying to create an instance of this external dependency type:  {0}. {1}".With(type.Name, ex.Message), ex);
+                        throw new InvalidOperationException($"An error occurred while trying to create an instance of this external dependency type:  {type.Name}. {ex.Message}");
                     }
                 }
 
@@ -70,9 +66,9 @@ namespace TheOthers
         /// Checks all external dependencies status.
         /// </summary>
         /// <returns>The all external dependencies with checked status.</returns>
-        public static IList<IExternalDependency> CheckAllExternalDependenciesStatus()
+        public static IList<IExternalDependency> CheckAllStatus()
         {
-            foreach (var other in GetAllExternalDepencies())
+            foreach (var other in GetAll())
             {
                 other.CheckStatus();
             }
@@ -80,7 +76,6 @@ namespace TheOthers
             return s_othersCache;
         }
 
-        // TODO: use HelperSharp.ReflectionHelper.GetSubclassof (waiting for nuget package update).
 		private static bool FilterExternalDependency(Type type)
 		{
 			var interfaceType = typeof(IExternalDependency);

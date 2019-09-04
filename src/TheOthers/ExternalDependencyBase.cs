@@ -1,6 +1,5 @@
 using System;
 using System.Diagnostics;
-using HelperSharp;
 
 namespace TheOthers
 {
@@ -9,20 +8,18 @@ namespace TheOthers
     /// </summary>
     public abstract class ExternalDependencyBase : IExternalDependency
     {
-        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="TheOthers.ExternalDependencyBase"/> class.
         /// </summary>
         /// <param name="name">The Other's name.</param>
         protected ExternalDependencyBase(string name)
         {
-            ExceptionHelper.ThrowIfNullOrEmpty("name", name);
+            if (string.IsNullOrEmpty(name))
+                throw new ArgumentNullException(nameof(name));
 
             Name = name;
         }
-        #endregion
 
-        #region Properties
         /// <summary>
         /// Gets the name.
         /// </summary>
@@ -37,10 +34,8 @@ namespace TheOthers
         /// Gets the status.
         /// </summary>
         /// <value>The status.</value>
-        public ExternalDependencyStatus Status { get; private set; }
-        #endregion
-
-        #region Methods
+        public ExternalDependencyStatus Status { get; private set; }        
+        
         /// <summary>
         /// Checks the status of the other.
         /// </summary>
@@ -55,7 +50,7 @@ namespace TheOthers
 
                 if (string.IsNullOrWhiteSpace(Status.Description))
                 {
-                    Status.Description = "Response time: {0}".With(sw.Elapsed);
+                    Status.Description = $"Response time: {sw.Elapsed}";
                 }
             }
             catch (Exception ex)
@@ -76,7 +71,6 @@ namespace TheOthers
         /// Performs the check status.
         /// </summary>
         /// <returns>The check status.</returns>
-        protected internal abstract ExternalDependencyStatus PerformCheckStatus();
-        #endregion
+        protected internal abstract ExternalDependencyStatus PerformCheckStatus();        
     }
 }

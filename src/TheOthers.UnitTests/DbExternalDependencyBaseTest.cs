@@ -1,6 +1,5 @@
 using System;
 using NUnit.Framework;
-using Rhino.Mocks;
 using TestSharp;
 
 namespace TheOthers.UnitTests
@@ -16,7 +15,7 @@ namespace TheOthers.UnitTests
                 new Stub1DbExternalDependency("name", null);
             });
 
-            ExceptionAssert.IsThrowing(typeof(ArgumentException), () =>
+            ExceptionAssert.IsThrowing(typeof(ArgumentNullException), () =>
             {
                 new Stub1DbExternalDependency("name", "");
             });

@@ -1,7 +1,6 @@
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
-using HelperSharp;
 
 namespace TheOthers
 {
@@ -10,11 +9,8 @@ namespace TheOthers
     /// </summary>
     public abstract class DbExternalDependencyBase : ExternalDependencyBase
     {
-        #region Fields
-        private string m_connectionString;
-        #endregion
-
-        #region Constructors
+        private string _connectionString;
+        
         /// <summary>
         /// Initializes a new instance of the <see cref="TheOthers.DbExternalDependencyBase"/> class.
         /// </summary>
@@ -23,27 +19,26 @@ namespace TheOthers
         protected DbExternalDependencyBase(string name, string connectionStringName)
             : base(name)
         {
-            ExceptionHelper.ThrowIfNullOrEmpty("connectionStringName", connectionStringName);
+            if (string.IsNullOrEmpty(connectionStringName))
+                throw new ArgumentNullException(nameof(connectionStringName));
 
             var config = ConfigurationManager.ConnectionStrings[connectionStringName];
 
             if (config == null)
             {
-                throw new ArgumentException("The connection string with name '{0}' does not exist on .config file.".With(connectionStringName));
+                throw new ArgumentException($"The connection string with name '{connectionStringName}' does not exist on .config file.");
             }
 
-            m_connectionString = config.ConnectionString;
+            _connectionString = config.ConnectionString;
         }
-        #endregion
-
-        #region Methods
+        
         /// <summary>
         /// Performs the check status.
         /// </summary>
         /// <returns>The check status.</returns>
         protected internal override ExternalDependencyStatus PerformCheckStatus()
         {
-            using (var conn = new SqlConnection(m_connectionString))
+            using (var conn = new SqlConnection(_connectionString))
             {
                 conn.Open();
             }
@@ -52,7 +47,6 @@ namespace TheOthers
             {
                 IsFailing = false
             };
-        }
-        #endregion
+        }        
     }
 }

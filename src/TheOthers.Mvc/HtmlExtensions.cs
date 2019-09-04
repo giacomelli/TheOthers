@@ -25,7 +25,7 @@ namespace TheOthers.Mvc
         /// <returns>The html.</returns>
         public static TheOthersUI BootstrapMonitor(this TheOthersUI ui)
         {
-            var others = ExternalDependencyService.CheckAllExternalDependenciesStatus();
+            var others = ExternalDependencyService.CheckAllStatus();
 
             foreach (var other in others)
             {
@@ -56,7 +56,7 @@ namespace TheOthers.Mvc
         /// <returns>The html.</returns>
         public static TheOthersUI BasicTableMonitor(this TheOthersUI ui)
         {
-            var others = ExternalDependencyService.CheckAllExternalDependenciesStatus();
+            var others = ExternalDependencyService.CheckAllStatus();
             ui.Html.Append("<table border='1' width='100%'><tr><th>Name</th><th>Is failing?</th><th>Description</th></tr>");
 
             foreach (var other in others)

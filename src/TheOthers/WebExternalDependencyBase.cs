@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
-using HelperSharp;
 
 namespace TheOthers
 {
@@ -12,12 +11,9 @@ namespace TheOthers
     /// </summary>
     public class WebExternalDependencyBase : ExternalDependencyBase
     {
-        #region Fields
         private string m_url;
         private HttpStatusCode m_expectedStatusCode;
-        #endregion
 
-        #region Constructors
         /// <summary>
         /// Initializes a new instance of the <see cref="TheOthers.WebExternalDependencyBase"/> class.
         /// </summary>
@@ -29,10 +25,8 @@ namespace TheOthers
         {
             m_url = url;
             m_expectedStatusCode = expectedStatusCode;
-        }
-        #endregion
-
-        #region Methods
+        }        
+        
         /// <summary>
         /// Performs the check status.
         /// </summary>
@@ -50,11 +44,10 @@ namespace TheOthers
             else
             {
                 result.IsFailing = true;
-                result.Description = "Expected HTTP status code was '{0}', but the url '{1}' returns a status '{2}'.".With(m_expectedStatusCode, m_url, response.StatusCode);
+                result.Description = $"Expected HTTP status code was '{m_expectedStatusCode}', but the url '{m_url}' returns a status '{response.StatusCode}'.";
             }
 
             return result;
-        }
-        #endregion
+        }        
     }
 }
